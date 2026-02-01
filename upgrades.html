@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="script.js" defer></script>
+
+<title>Upgrades</title>
+<style>
+  .return-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #ADD8E6;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #000;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+  }
+
+  .return-btn:hover {
+    background-color: #9ACDEB;
+  }
+
+  .action-button {
+    font-size: 28px;
+    padding: 15px 30px;
+    margin: 0 20px;
+    cursor: pointer;
+  }
+
+  .coins-display {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    font-family: Arial, sans-serif;
+  }
+
+  body {
+    background-image: url('./images/shop.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    position: relative;
+  }
+
+  .Eco-round {
+    margin-bottom: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="coins-display">
+  <span>Coins: <span id="coinsShop">0</span></span>
+</div>
+
+<div class="Eco-round">
+  <button class="action-button" id="ecoRoundBtn" onclick="upgrades()">10 gold = Eco Round, 2x coins</button>
+</div>
+
+<div class="Eco-round">
+  <button class="action-button" id="gymSessionBtn" onclick="gymSession()">10 gold = Gym Session, Full heal</button>
+</div>
+
+<div class="Eco-round">
+  <button class="action-button" id="headhunterBtn" onclick="headhunter()">20 gold = Headhunter, 1.5x joy</button>
+</div>
+
+<div class="Eco-round">
+  <button class="action-button" id="fullBuyBtn" onclick="fullBuy()">30 gold = Full Buy, 3x coins</button>
+</div>
+
+<div class="Eco-round">
+  <button class="action-button" id="viperBtn" onclick="viper()">25 gold = Viper, 0.5x coins, 2x health/sleep/joy</button>
+</div>
+
+
+<button class="return-btn" onclick="goBack()">Return</button>
+
+<script>
+function goBack() {
+  save();
+  window.location.href = "index.html";
+}
+
+function updateCoinDisplay() {
+  const coinsDisplay = document.getElementById("coinsShop");
+  if (coinsDisplay && typeof coins !== "undefined") {
+    coinsDisplay.textContent = Math.floor(coins);
+  }
+}
+
+window.addEventListener("load", () => {
+  updateCoinDisplay();
+
+  if (typeof ecoRoundActive !== "undefined" && ecoRoundActive) {
+    const upgradeBtn = document.getElementById("ecoRoundBtn");
+    if (upgradeBtn) {
+      upgradeBtn.textContent = "Purchased";
+      upgradeBtn.disabled = true;
+      upgradeBtn.style.opacity = "0.5";
+      upgradeBtn.style.cursor = "not-allowed";
+      upgradeBtn.style.backgroundColor = "#90EE90";
+    }
+  }
+
+  if (typeof headhunterActive !== "undefined" && headhunterActive) {
+    const upgradeBtn = document.getElementById("headhunterBtn");
+    if (upgradeBtn) {
+      upgradeBtn.textContent = "Purchased";
+      upgradeBtn.disabled = true;
+      upgradeBtn.style.opacity = "0.5";
+      upgradeBtn.style.cursor = "not-allowed";
+      upgradeBtn.style.backgroundColor = "#90EE90";
+    }
+  }
+
+  if (typeof fullBuyActive !== "undefined" && fullBuyActive) {
+    const upgradeBtn = document.getElementById("fullBuyBtn");
+    if (upgradeBtn) {
+      upgradeBtn.textContent = "Purchased";
+      upgradeBtn.disabled = true;
+      upgradeBtn.style.opacity = "0.5";
+      upgradeBtn.style.cursor = "not-allowed";
+      upgradeBtn.style.backgroundColor = "#90EE90";
+    }
+  }
+
+  if (typeof viperActive !== "undefined" && viperActive) {
+    const upgradeBtn = document.getElementById("viperBtn");
+    if (upgradeBtn) {
+      upgradeBtn.textContent = "Purchased";
+      upgradeBtn.disabled = true;
+      upgradeBtn.style.opacity = "0.5";
+      upgradeBtn.style.cursor = "not-allowed";
+      upgradeBtn.style.backgroundColor = "#90EE90";
+    }
+  }
+});
+
+setInterval(updateCoinDisplay, 1000);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamagotchi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="Stats">
+        <span>Coins: <span id="coins">0</span></span>
+        <span>Health: <span id="health">100</span></span>
+        <span>Hunger: <span id="hunger">100</span></span>
+        <span>Sleep: <span id="sleep">100</span></span>
+        <span>Joy: <span id="joy">100</span></span>
+    </div>
+
+    <div class="Character">
+        <img id="characterImage" src="./images/tamagotchi-character.png" alt="Tamagotchi character">
+
+        <div id="statusMessages" class="status-messages"></div>
+
+        <div class="Buttons">
+            <button onclick="heal()">Heal</button>
+            <button onclick="eat()">Feed</button>
+            <button onclick="sleepAction()">Sleep</button>
+            <button onclick="playGame()">Play</button>
+        </div>
+    </div>
+
+    <video id="actionVideo" class="action-video"></video>
+
+    <button id="upgradesBtn" class="upgrades-button">
+    <img src="./images/CART.png" class="shop-icon">
+    </button>
+
+
+    <div>©Horcus</div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

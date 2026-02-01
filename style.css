@@ -1,0 +1,113 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-image: url(./images/spaanse-vlag.png);
+    background-position: center;
+    background-size: cover;
+    font-family: 'Arial', sans-serif;
+}
+
+
+.Stats {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.Stats span {
+    font-size: 34px;
+    margin: 0 15px;
+}
+
+.Character {
+    text-align: center;
+}
+
+.Character img {
+    width: 420px;
+}
+
+.status-messages {
+    background-color: white;
+    border: 3px solid #333;
+    border-radius: 8px;
+    padding: 10px 18px;
+    margin: 12px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    min-height: 28px;
+}
+
+.sad-Character {
+    text-align: center;
+}
+
+.sad-Character img {
+    width: 550px;
+}
+
+.Buttons {
+    margin-top: 30px;
+}
+
+button {
+    font-size: 24px;
+    padding: 12px 25px;
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+.upgrades {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  background-color: #9fd3ff;
+  border: none;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+
+.action-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    z-index: 999;
+    display: none;
+}
+
+.upgrades-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  background-color: #9fd3ff;
+  border: none;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.shop-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.menu .shop-icon {
+    position: relative;
+    top: 50px;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tamagotchi - Home</title>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+        background-image: url(./images/spaanse-vlag.png);
+        background-position: center;
+        background-size: cover;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .container {
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        font-size: 48px;
+        margin: 0 0 20px 0;
+        color: #333;
+    }
+
+    p {
+        font-size: 24px;
+        color: #666;
+        margin-bottom: 30px;
+    }
+
+    .start-btn {
+        font-size: 32px;
+        padding: 20px 50px;
+        cursor: pointer;
+        background-color: #90EE90;
+        border: none;
+        border-radius: 10px;
+        color: #000;
+        font-weight: bold;
+        transition: background-color 0.3s;
+    }
+
+    .start-btn:hover {
+        background-color: #7CCD7C;
+    }
+
+    .copyright {
+        position: fixed;
+        bottom: 20px;
+        color: #fff;
+        font-size: 14px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Horcus</h1>
+    <button class="start-btn" onclick="startGame()">Start Game</button>
+</div>
+
+<div class="copyright">©Horcus</div>
+
+<script>
+    function startGame() {
+        sessionStorage.setItem("gameStarted", "true");
+        window.location.href = "index.html";
+    }
+</script>
+
+</body>
+</html>
